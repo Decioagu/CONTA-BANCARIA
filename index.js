@@ -22,7 +22,7 @@ function operacao() {
         message: 'Escolha um opção abaixo:',
         choices: [
           'Criar conta',
-          'Consultar Saldo',
+          'Consultar saldo',
           'Depositar',
           'Sacar',
           'Transferencia',
@@ -39,7 +39,7 @@ function operacao() {
         criarConta() // função para criar conta
       } else if (acao === 'Depositar') {
         depositar() // função depositar valores em dinheiro
-      } else if (acao === 'Consultar Saldo') {
+      } else if (acao === 'Consultar saldo') {
         saldoDaConta() // função para ver saldo
       } else if (acao === 'Sacar') {
         saque() // função sacar valores em dinheiro
@@ -75,7 +75,7 @@ function menuInteligente(op) {
             depositar() // retornar para o inicio da função depositar()
             break;
 
-          case 'Consultar Saldo':
+          case 'Consultar saldo':
             saldoDaConta() // retornar para o inicio da função saldoDaConta()
             break;
           
@@ -228,7 +228,7 @@ function depositarValorNaConta(nomeDaConta, valor) {
 
   // imprimir valores atualizado
   console.log(chalk.bgBlue.black(`Foi depositado o valor de R$${parseFloat(valor).toFixed(2)} na sua conta!`));
-  console.log(chalk.bgBlue.black(`Saldo atual de sua conta é de R$${valorAtualConta.saldo.toFixed(2)}`));
+  console.log(chalk.bgBlue.black(`saldo atual de sua conta é de R$${valorAtualConta.saldo.toFixed(2)}`));
 
   operacao() // iniciar menu principal
 }
@@ -250,13 +250,13 @@ function saldoDaConta() {
 
       // usuário existe = "nomeDaConta" (caso não exista)
       if (!checarConta(nomeDaConta)) {
-        menuInteligente('Consultar Saldo') // Envia para função de Menu Inteligente
+        menuInteligente('Consultar saldo') // Envia para função de Menu Inteligente
       } else {
         // marmazena na variavel "valorAtualConta" o {objeto} "saldo" do usuário = "nomeDaConta"
         const valorAtualConta = valorNaConta(nomeDaConta);
 
         // imprimir valor atualizado do {objeto} "saldo"
-        console.log(chalk.bgBlue.black(`Saldo atual de sua conta é de R$${valorAtualConta.saldo.toFixed(2)}`));
+        console.log(chalk.bgBlue.black(`saldo atual de sua conta é de R$${valorAtualConta.saldo.toFixed(2)}`));
 
         operacao() // iniciar menu principal
       }      
@@ -323,7 +323,7 @@ function retirarValorDaConta(nomeDaConta, valor) {
   
     // imprimir valores atualizado
     console.log(chalk.bgBlue.black(`Foi realizado um saque de R$${parseFloat(valor).toFixed(2)} da sua conta!`));
-    console.log(chalk.bgBlue.black(`Saldo atual de sua conta é de R$${valorAtualConta.saldo.toFixed(2)}`));
+    console.log(chalk.bgBlue.black(`saldo atual de sua conta é de R$${valorAtualConta.saldo.toFixed(2)}`));
 
     operacao() // iniciar menu principal
   }
@@ -408,13 +408,13 @@ function transferenciaEntreContas(contaDevedor, contaBenificiario, valor) {
   
     // imprimir valores atualizado
     console.log(chalk.bgBlue.black(`Transferencia de R$${parseFloat(valor).toFixed(2)} realizada com sucesso!`));
-    console.log(chalk.bgBlue.black(`Saldo atual de sua conta é de R$${valorAtualContaDevedor.saldo.toFixed(2)}`));
+    console.log(chalk.bgBlue.black(`saldo atual de sua conta é de R$${valorAtualContaDevedor.saldo.toFixed(2)}`));
 
     operacao() // iniciar menu principal
     
     /* // Testes...
     console.log();
-    console.log(chalk.bgBlue.black(`Saldo ${contaDevedor} R$${valorAtualContaDevedor.saldo.toFixed(2)}`));
-    console.log(chalk.bgBlue.black(`Saldo ${contaBenificiario} R$${valorAtualDaContaBenificiario.saldo.toFixed(2)}`)); */
+    console.log(chalk.bgBlue.black(`saldo ${contaDevedor} R$${valorAtualContaDevedor.saldo.toFixed(2)}`));
+    console.log(chalk.bgBlue.black(`saldo ${contaBenificiario} R$${valorAtualDaContaBenificiario.saldo.toFixed(2)}`)); */
   }
 }
