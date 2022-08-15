@@ -1,9 +1,9 @@
 # CONTA BANCARIA
  ## NODE
- Neste exercício, foi construido um sistema bancário onde é posivel:
+ Neste exercício, foi construído um sistema bancário onde é possível:
  * Criar conta;
  * Consultar saldo;
  * Depositar;
  * Sacar;
- * Transferencia entre contas existentes.
+ * Transferência entre contas existentes.
  
